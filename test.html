@@ -1,9 +1,75 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<title>Hello GitHub Page</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
 </head>
+
 <body>
-  <h1>Hello GitHub Page </h1>
+    <h1>台北河川守護</h1>
+    <div id="list"></div>
+    <script>
+        // var list = document.getElementById("list");
+        // var src="https://data.taipei/api/v1/dataset/0d758183-6d56-4370-898d-bca648e85fff?scope=resourceAquire";
+        // fetch(src).then(function(response){
+        //     // console.log(response);
+        //     return response.json();
+
+        // }).then(function(result){
+        //     console.log(result);
+        //     console.log("資料",result.result.results);
+        //     var rep=result.result.results;
+        //     var sum="";
+        //     for(var i =1;i<rep.length;i++){
+
+        //         // console.log(rep[i]);
+
+        //         if(rep[i].氣溫<20&&rep[i].監測站!="平均"){
+        //             console.log(rep[i].河川名稱);
+        //             sum+=rep[i].河川名稱+":"+rep[i].監測站+"<hr/>";
+
+        //         }
+        //     }
+        //     list.innerHTML+=sum;
+
+
+
+        // });
+
+        var list = document.getElementById('list');
+        var src1 = "https://data.taipei/api/v1/dataset/5012e8ba-5ace-4821-8482-ee07c147fd0a?scope=resourceAquire";
+        fetch(src1).then(function (response) {
+            return response.json();
+        }).then(function (result) {
+            var rr = result.result.results;
+            // console.log(result.result.results);
+            var sum1 = "";
+
+            sum1 += '<table>'+"<tr>"+"<td>"+"區域"+"</td>"+"<td>"+"設置路段"+"</td>"+"<td>"+"設置處"+"</td>"+"<td>"+"速限"+"</td>"+"</tr>";
+            for (var j = 0; j < rr.length; j++) {
+                sum1 += "<tr >" + "<td>"+ rr[j].轄區 + "</td>" + "<td >" +rr[j].設置路段 +"</td>"+"<td>"+rr[j].設置地點 + "</td >" + "<td>"+
+                    +rr[j].速限+"</td>" + "</tr>";
+            }
+            sum1 += "</table>"
+
+            list.innerHTML += sum1;
+
+
+        })
+        
+
+
+    </script>
 </body>
-  
+
 </html>
