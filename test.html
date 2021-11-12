@@ -1,1 +1,268 @@
-#test
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        /* Center the loader */
+        #loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+            width: 150px;
+            height: 150px;
+            margin: -76px 0 0 -76px;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #9bfae5;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Add animation to "page content" */
+        .animate-bottom {
+            position: relative;
+            -webkit-animation-name: animatebottom;
+            -webkit-animation-duration: 1s;
+            animation-name: animatebottom;
+            animation-duration: 1s
+        }
+
+        @-webkit-keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0px;
+                opacity: 1
+            }
+        }
+
+        @keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
+
+        #myDiv {
+            display: none;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+
+        }
+
+        table {
+            margin-right: 150px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-gap: 10px;
+            background-color: #f0faf9;
+            padding: 10px;
+        }
+
+        .grid-container1 {
+            display: grid;
+            grid-template-columns: auto auto;
+            /* grid-gap: 10px; */
+            background-color: #d3f3f0;
+            /* padding: 10px; */
+        }
+
+        /* .hh {
+            grid-column:1 / span 2;
+        }
+        .hh1 {
+            grid-column:1 / span 2;
+        } */
+    </style>
+</head>
+
+<body onload="myFunction()" style="margin:0;">
+
+    <h2>台北市交通攝影機 </h2>
+    <div id="loader"></div>
+    
+    <div style="display:none;" id="myDiv" class="animate-bottom">
+        <div class="grid-container">
+            
+            <div class="item1">
+                
+                <h2>注意區段</h2>
+                <h5>( Loading約5~10秒,會出現表格 ) </h5>
+                <div id="list"></div>
+            </div>
+            <div class="item2">
+                
+                
+                
+                <div style="position:fixed ;margin-right:100px;">
+                    <h2 style="margin-right:100px;">熱門查詢</h2>
+                    <h5 style="margin-right:100px;"  >(表格出現前也可先選) </h5>
+                    <input   onclick="searCh1()" type="checkbox" id="v1" name="dc" value="信義">
+                    <label style="margin-right:100px;"  for="v1"> 信義</label><br>
+                    <input   onclick="searCh1()" type="checkbox" id="v2" name="dc" value="大安">
+                    <label style="margin-right:100px;"  for="v2">大安</label><br>
+                    <input   onclick="searCh1()" type="checkbox" id="v3" name="dc" value="松山">
+                    <label style="margin-right:100px;"  for="v3">松山</label><br>
+                    <input   onclick="searCh1()" type="checkbox" id="v4" name="dc" value="內湖">
+                    <label style="margin-right:100px;"  for="v4">內湖</label><br>
+                    <input   onclick="searCh1()" type="checkbox" id="v5" name="dc" value="南港">
+                    <label style="margin-right:100px;"  for="v5">南港</label><br><br>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+
+        <!-- <div class="grid-container1">
+            <div class="hh" id="list">
+               
+
+            </div>
+            
+            <div  class="hh1">
+                egmkprir
+
+            </div>
+        </div> -->
+
+    </div>
+
+    <script>
+        var list = document.getElementById('list');
+        var src1 = "https://data.taipei/api/v1/dataset/5012e8ba-5ace-4821-8482-ee07c147fd0a?scope=resourceAquire";
+        fetch(src1).then(function (response) {
+            return response.json();
+        }).then(function (result) {
+            var rr = result.result.results;
+            localStorage.setItem('item', JSON.stringify(rr));
+
+            // console.log(result.result.results);
+            var sum1 = "";
+
+            sum1 += '<table>' + "<tr>" + "<td>" + "區域" + "</td>" + "<td>" + "設置路段" + "</td>" + "<td>" + "設置處" + "</td>" + "<td>" + "速限" + "</td>" + "</tr>";
+            for (var j = 0; j < rr.length; j++) {
+                sum1 += "<tr >" + "<td>" + rr[j].轄區 + "</td>" + "<td >" + rr[j].設置路段 + "</td>" + "<td>" + rr[j].設置地點 + "</td >" + "<td>" +
+                    +rr[j].速限 + "</td>" + "</tr>";
+            }
+            sum1 += "</table>"
+
+            list.innerHTML += sum1;
+
+
+        })
+        var myVar;
+
+        function myFunction() {
+            myVar = setTimeout(showPage, 2000);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+        }
+        function searCh1() {
+
+            var x = document.getElementsByName("dc");
+            var i;
+            var addall = [];
+            for (i = 0; i < x.length; i++) {
+                if (x[i].checked == true) {
+                    // console.log(JSON.parse( localStorage.getItem('item')));
+
+                    // console.log(x[i].value);
+                    addall[addall.length] = x[i].value;
+                }
+
+            }
+            console.log(addall);
+            var sum1 = "";
+            var js = JSON.parse(localStorage.getItem('item'));
+            sum1 += '<table>' + "<tr>" + "<td>" + "區域" + "</td>" + "<td>" + "設置路段" + "</td>" + "<td>" + "設置處" + "</td>" + "<td>" + "速限" + "</td>" + "</tr>";
+            for (var j = 0; j < js.length; j++) {
+                for (var t = 0; t < js.length; t++) {
+
+                    if (js[j].轄區 == addall[t]) {
+
+                        sum1 += "<tr >" + "<td>" + js[j].轄區 + "</td>" + "<td >" + js[j].設置路段 + "</td>" + "<td>" + js[j].設置地點 + "</td >" + "<td>" +
+                            +js[j].速限 + "</td>" + "</tr>";
+                    }
+                }
+
+
+            }
+            sum1 += "</table>"
+            list.innerHTML = sum1;
+            if (addall.length==0) {
+                var js = JSON.parse(localStorage.getItem('item'));
+                sum1 = "";
+                sum1 += '<table>' + "<tr>" + "<td>" + "區域" + "</td>" + "<td>" + "設置路段" + "</td>" + "<td>" + "設置處" + "</td>" + "<td>" + "速限" + "</td>" + "</tr>";
+                for (var j = 0; j < js.length; j++) {
+
+
+
+
+                    sum1 += "<tr >" + "<td>" + js[j].轄區 + "</td>" + "<td >" + js[j].設置路段 + "</td>" + "<td>" + js[j].設置地點 + "</td >" + "<td>" +
+                        +js[j].速限 + "</td>" + "</tr>";
+
+
+
+
+                }
+
+                sum1 += "</table>"
+                list.innerHTML = sum1;
+            }
+        }
+
+    </script>
+
+
+</body>
+
+</html>
