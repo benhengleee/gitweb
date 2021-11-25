@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIAN-SIANG YANG申請表</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="icon" href="0730.png">
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        span {
+
+            font-size: 30px;
+            /* font-weight: bold; */
+        }
+
+        span:hover {
+            color: rgb(0, 131, 89);
+        }
+
+        li {
+            font-size: 23px;
+        }
+
+        p {
+            font-size: 17px;
+        }
+
+        a:link {
+
+            text-decoration: none;
+
+        }
+
+        a {
+            color: rgb(0, 0, 0);
+        }
+
+        table tr td {
+            border: rgb(0, 255, 170) solid 3px;
+            text-align: center;
+
+        }
+
+        table {
+            border-collapse: collapse;
+            border-radius: 18px;
+            border-style: hidden;
+            /* hide standard table (collapsed) border */
+            box-shadow: 0 0 0 3px rgb(0, 255, 170);
+            /* this draws the table border  */
+        }
+
+        td {
+            border: 5px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="background-color:cornsilk;">
+        <div class="container"> JIAN-SIANG YANG </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+
+                    <a href=""><span> WeHelp Bootcamp 申請表 </span></a>
+                </div>
+                <div class="col-5">
+                    <a href="pri copy 2.html"><span>個人履歷</span></a>
+                </div>
+                <div class="col-2">
+                    <a href="pri copy.html"><span>近期作品</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="margin-left: 85px;margin-top: 10px;" class="container">
+
+        <ul>
+            <li>兩百字內的個人簡介
+                <p>老師好，我的名字叫楊建庠，高中後的我因為家中經濟因素，早早進入職場工作，有做過業務、採購專員，經過幾年的工作，漸漸緩解經濟負擔，今年剛剛跨入30，
+                    心中突然覺得要去追求自己的興趣，於是我想起27歲的我，因為工作常常要運用軟體來製作報表、協助工作，所以常常Google了很多知識，也就是那時買了一本
+                    Python的書，來照著上面的程式練習，但是有些很深入的程式，還需要廣泛的的知識，於是在Google知識中就找到老師的YT，發現老師教學的方式十分適合我，
+                    於是在工作之餘，每天給自己約 1 hr的時間來專注學習，這兩年中我學習到 HTML、CSS、Javascript、Python 的基本知識，但是從自己練習過程中，
+                    發現還是需要有系統性的學習，於是在工作之餘，於國立台中科技大學進修資訊管理系，學習資訊領域專長，以及取得學歷，由於在老師的YT上有學習過JS，
+                    所以科大教的JAVA語言能上手比較快，而今面臨30，目前待業中，盤點自我技能以及興趣後，更堅定要往軟體工程師的方向邁進。
+
+                </p>
+            </li>
+            <li>為什麼想成為前端、後端、或全端工程師？
+                <p>我想成為全端工程師，因為自己在學習的過程中發現，常常學了前端，就會想順便了解後端的架構，當把路由串接的好，再結合前端頁面，
+                    形成完整的程式，有很大的成就感，喜歡架構的過程。
+
+                </p>
+            </li>
+
+            <li>為了成為軟體工程師，曾經做過什麼努力？
+                <p>從27歲每天花約 1 hr來練習程式，學習了 HTML、CSS、Javascript、Python。常常遇到一個觀念學習了好幾天，只好上google查找技術文件，
+                    又因為多為英文，於是花了很多時間練習程式英文， 而學了一些些前端的基本，又探索了一些後端的程式練習，像是PHP的session、cookie，
+                    可以給使用者登入、登出、頁面跳轉的功能，也學習了一些SQL以及實作基本Laravel的CRUD，來熟悉MVC架構和結合後端資料庫，做練習前後端整合。目前在台中科大進修，學習了
+                    計算機概論及JAVA，最近學習了 Ajax，也寫了 <a href="pri copy.html" style="color: rgb(0, 217, 224);font-size: 23px;">近期作品</a>做練習，
+                    由於資訊科技創新快速，為了成為軟體工程師，自己一直保持學習。
+
+                </p>
+            </li>
+            <li>如果參與這個計畫，會怎麼安排學習時間？
+
+                <table>
+                    <tr>
+                        <td>星期 / 時段</td>
+                        <td>08 - 12a.m.</td>
+                        <td>01 - 06p.m.</td>
+                        <td>08 - 10p.m.</td>
+
+                    </tr>
+                    <tr>
+                        <td>星期一至五</td>
+                        <td>學習課程</td>
+                        <td>實作程式</td>
+                        <td>當日學習複習</td>
+
+                    </tr>
+                    <tr>
+                        <td>星期六至日</td>
+                        <td>科大進修</td>
+                        <td>科大進修</td>
+                        <td>階段學習複習</td>
+
+                    </tr>
+                </table>
+
+            </li>
+            <li>如果參與這個計畫，預期會碰到什麼困難？你打算怎麼解決它？
+                <p>預期自己前端的RWD以及React框架部分，會碰到困難，打算Google查找線上資源，以及多多實作grid、flex這方面的技巧，React的部分，先照著教學一行一行的練，
+                    練熟再思考原因，再試著實作出自己的作品。
+                    後端的部分預期框架上，會花很長一段時間熟悉Flask，以及練習RESTful API，由於框架對於很多大型的公司來開發大型的專案很常用和方便，
+                    所以會自己廣泛閱讀教學文件，再加以實作，以期用到框架時能發揮所長。
+
+                </p>
+            </li>
+            <li>是否有想要加入的軟體公司？為什麼想加入該公司？
+                <p>
+                    精誠資訊，上市櫃大公司，資源多，學的多，視野也可以增加很多。
+                </p>
+            </li>
+            <li>想要對我們說的事情？
+                <p>感謝老師在YT上的教學影片，尤其是在JS教學還有在GitHub基本使用上，帶給我這樣的初學者很大的收穫。
+
+                </p>
+            </li>
+
+
+
+
+
+
+
+
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
